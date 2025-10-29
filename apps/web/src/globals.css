@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ===================================================================
+     * THEME INHERITANCE FROM SUPERGENT PARENT
+     * ===================================================================
+     * These CSS variables inherit from the parent Supergent application.
+     * When users toggle themes (light/dark/stark/system), changes
+     * propagate instantly to this marketplace app with ZERO rebuild!
+     *
+     * How it works:
+     * - Parent sets --background on <html> element
+     * - Child reads: --background: var(--background)
+     * - CSS variables cascade through DOM naturally
+     * - Theme changes are instant and automatic
+     * =================================================================== */
+
+    /* Base colors - inherit from parent theme */
+    --background: var(--background);
+    --foreground: var(--foreground);
+
+    /* Surface colors - cards, popovers, etc. */
+    --card: var(--card);
+    --card-foreground: var(--card-foreground);
+    --popover: var(--popover);
+    --popover-foreground: var(--popover-foreground);
+
+    /* Brand colors - primary actions and emphasis */
+    --primary: var(--primary);
+    --primary-foreground: var(--primary-foreground);
+
+    /* Secondary colors - less prominent actions */
+    --secondary: var(--secondary);
+    --secondary-foreground: var(--secondary-foreground);
+
+    /* Muted colors - disabled states, less important text */
+    --muted: var(--muted);
+    --muted-foreground: var(--muted-foreground);
+
+    /* Accent colors - highlights, hover states */
+    --accent: var(--accent);
+    --accent-foreground: var(--accent-foreground);
+
+    /* Destructive colors - errors, delete actions */
+    --destructive: var(--destructive);
+    --destructive-foreground: var(--destructive-foreground);
+
+    /* Interactive elements - borders, inputs, focus rings */
+    --border: var(--border);
+    --input: var(--input);
+    --ring: var(--ring);
+
+    /* Border radius - consistent rounding */
+    --radius: var(--radius);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
